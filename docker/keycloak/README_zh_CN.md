@@ -1,4 +1,4 @@
-# Keycloak 配置指南
+# Keycloak 配置指南（不使用docker-compose的情况下单独配置）
 
 ## 1. 安装 Keycloak
 你可以选择本地安装 Keycloak 或使用 Docker 运行。
@@ -84,7 +84,7 @@ http://localhost:8080/realms/medagent-app/.well-known/openid-configuration
 curl -X POST "http://localhost:8080/realms/medagent-app/protocol/openid-connect/token" \
      -H "Content-Type: application/x-www-form-urlencoded" \
      -d "grant_type=password" \
-     -d "client_id=medagent-app-client" \
+     -d "client_id=medagent-client" \
      -d "client_secret=YOUR_CLIENT_SECRET" \
      -d "username=testuser" \
      -d "password=testpassword"

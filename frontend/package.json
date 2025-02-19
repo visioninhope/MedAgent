@@ -1,5 +1,5 @@
 {
-  "name": "next_flask_auth_app",
+  "name": "medagent",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,8 +11,8 @@
   "dependencies": {
     "antd": "^5.24.1",
     "next": "15.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -9,8 +9,8 @@ const { Title } = Typography;
 const DashboardPage = () => {
   return (
     <div>
-      <Title>Dashboard</Title>
-      <p>此页面供管理员管理系统使用。</p>
+      <Title>MedAgent: Dashboard</Title>
+      <p>This page is for admin to manage the system.</p>
     </div>
   );
 };

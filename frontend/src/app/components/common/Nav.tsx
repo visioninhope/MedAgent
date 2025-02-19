@@ -6,11 +6,11 @@ import { UserOutlined } from '@ant-design/icons';
 const menuItems = [
   {
     key: 'home',
-    label: <Link href="/">首页</Link>,
+    label: <Link href="/">Home</Link>,
   },
   {
     key: 'chat',
-    label: <Link href="/chat">问答</Link>,
+    label: <Link href="/chat">Chat</Link>,
   },
   {
     key: 'studio',
@@ -33,20 +33,20 @@ const Nav = () => {
         boxShadow: '0 2px 8px #f0f1f2',
       }}
     >
-      {/* 左侧 Logo */}
+      {/* Logo */}
       <div style={{ marginRight: '24px' }}>
         <Link href="/">
           <Image className="dark:invert" src="/vercel.svg" alt="Vercel logomark" width={20} height={40}  />
         </Link>
       </div>
 
-      {/* 中间菜单 */}
+      {/* Menu */}
       <Menu mode="horizontal" items={menuItems} style={{ flex: 1 }} />
 
-      {/* 右侧登录按钮 */}
+      {/* Signin Button */}
       <Link href="/signin">
         <Button type="primary" icon={<UserOutlined />}>
-          登录
+          Sign in
         </Button>
       </Link>
     </div>

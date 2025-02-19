@@ -21,27 +21,27 @@ const SignInPage = () => {
   const onFinish = (values: SignInFormValues) => {
     const { role } = values;
     setRole(role);
-    router.push('/'); // 登录后跳转到首页
+    router.push('/'); // Sign in and redirect to the home page
   };
 
   return (
     <div style={{ maxWidth: 400, margin: '0 auto', padding: '50px 0' }}>
-      <Title level={2}>登录</Title>
+      <Title level={2}>Sign in</Title>
       <Form onFinish={onFinish}>
         <Form.Item
           name="role"
-          label="选择角色"
-          rules={[{ required: true, message: '请选择您的角色！' }]}
+          label="Choose your role"
+          rules={[{ required: true, message: 'Choose your role' }]}
         >
-          <Select placeholder="请选择角色">
-            <Option value="user">医生 (User)</Option>
-            <Option value="developer">开发者 (Developer)</Option>
-            <Option value="admin">管理员 (Admin)</Option>
+          <Select placeholder="Choose your role">
+            <Option value="user">Doctor (User)</Option>
+            <Option value="developer">Knowledge Base Maintainer (Developer)</Option>
+            <Option value="admin">Admin</Option>
           </Select>
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">
-            登录
+            Sign in
           </Button>
         </Form.Item>
       </Form>

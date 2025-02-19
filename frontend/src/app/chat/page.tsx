@@ -9,8 +9,8 @@ const { Title } = Typography;
 const ChatPage = () => {
   return (
     <div>
-      <Title>问答</Title>
-      <p>此页面供医生通过聊天交互使用系统。</p>
+      <Title>MedAgent Chat</Title>
+      <p>This page is for doctors to interact with the system through chat.</p>
     </div>
   );
 };

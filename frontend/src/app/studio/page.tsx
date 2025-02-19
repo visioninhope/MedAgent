@@ -9,8 +9,8 @@ const { Title } = Typography;
 const StudioPage = () => {
   return (
     <div>
-      <Title>Studio</Title>
-      <p>此页面供开发者管理 RAG pipeline 使用。</p>
+      <Title>MedAgent - Studio</Title>
+      <p>This page is for developer to manage the RAG pipeline and agentic AI workflow.</p>
     </div>
   );
 };

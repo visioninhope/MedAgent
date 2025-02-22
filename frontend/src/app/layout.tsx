@@ -1,31 +1,22 @@
-"use client";
-
+// app/layout.tsx
+'use client';
 import React from 'react';
-import { Layout } from 'antd';
-import CustomHead from './components/common/Head';
-import Nav from './components/common/Nav';
-import CustomFooter from './components/common/Footer';
-import { AuthProvider } from './context/AuthContext';
+import AppHeader from '../components/common/Header';
+import AppFooter from '../components/common/Footer';
+import './styles/globals.css';
 
-const { Content } = Layout;
-
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <CustomHead />
       <body>
-        <AuthProvider>
-          <Layout style={{ minHeight: '100vh' }}>
-            <Nav />
-            <Content style={{ padding: '0 50px', marginTop: 24 }}>
-              {children}
-            </Content>
-            <CustomFooter />
-          </Layout>
-        </AuthProvider>
+        <AppHeader />
+        <main style={{ minHeight: '80vh', padding: '20px' }}>{children}</main>
+        <AppFooter />
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

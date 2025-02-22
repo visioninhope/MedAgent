@@ -1,7 +1,10 @@
+// components/common/Footer.tsx
+import React from 'react';
 import { Layout } from 'antd';
+
 const { Footer } = Layout;
 
-const CustomFooter = () => {
+const AppFooter: React.FC = () => {
   return (
     <Footer style={{ textAlign: 'center' }}>
       MedAgent ©2025 Created by RWTH (DBIS) and UKA (IMI)
@@ -9,4 +12,4 @@ const CustomFooter = () => {
   );
 };
 
-export default CustomFooter;
+export default AppFooter;

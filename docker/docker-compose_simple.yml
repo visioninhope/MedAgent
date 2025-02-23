@@ -1,0 +1,26 @@
+services: # Next.js
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../docker/frontend/Dockerfile
+    container_name: medagent-frontend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ../docker/.env
+    depends_on:
+      - backend
+
+  backend: # Flask
+    build:
+      context: ../backend
+      dockerfile: ../docker/backend/Dockerfile
+    container_name: medagent-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ../docker/.env
+
+networks:
+  backend:
+    driver: bridge

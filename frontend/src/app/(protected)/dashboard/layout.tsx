@@ -3,7 +3,7 @@
 import React from 'react';
 import { Layout } from 'antd';
 import DashboardSidebar from '@/components/common/Sidebar/DashboardSidebar';
-import withRole from '@/lib/withRole';
+import withRole from '@/app/auth/withRole';
 
 const { Sider, Content } = Layout;
 

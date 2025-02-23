@@ -19,6 +19,10 @@ Deployment as recommended from Next.js:
 - Via [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js
 - Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+### Easy UI builder
+We will use [storybook](https://storybook.js.org/docs) for a quicker UI component and page development.
+- Ran `npx storybook@latest init` to add to project
+
 ## MedAgent
 Every page in our frontend will have same three basic blocks:
 

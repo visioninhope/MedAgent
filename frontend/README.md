@@ -2,7 +2,7 @@
 
 ## Original creation
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-- Further information on setup and utilized tools, see [here](./SetupGuide.md)
+- Further information on setup and utilized tools, see [here](docs/SetupGuide.md)
 
 Is started as part of the whole MedAgent project, see [here](../README.md#installation).
 
@@ -42,4 +42,5 @@ Finally, the Main Working Block captures the main interaction, depending on the 
 ├─ ...
 └─ README.md        
 ```
+- For an overview over the components, see [this list](docs/ComponentOverview.md)
 

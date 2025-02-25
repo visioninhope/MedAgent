@@ -1,4 +1,4 @@
-import { Button } from '@/components/core/button/Button';
+import Button from "@/components/core/button/Button";
 
 export function Card({ title, description }: { title: string; description: string }) {
   return (

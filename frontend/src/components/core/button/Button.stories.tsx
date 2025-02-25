@@ -1,21 +1,47 @@
-import { Button } from './Button';
-import { Heart } from 'lucide-react';
+import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
+import Button from './Button';
+import { ButtonProps } from '@/types/PropTypes';
 
-export default {
-  title: 'Core/Button',
-  component: Button,
+const meta: Meta<typeof Button> = {
+    title: 'Core/Button',
+    component: Button,
+    parameters: {
+        layout: 'centered',
+    },
+    argTypes: {
+        onClick: { action: 'clicked' },
+        variant: {
+            control: { type: 'select' },
+            options: ['primary', 'secondary', 'tertiary'],
+        },
+    },
 };
 
-export const Default = () => <Button label="Click Me" />;
+export default meta;
 
-export const WithIcon = () => (
-  <Button label="Next">
-     <Heart className="h-6 w-6" />
-  </Button>
-);
+const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
 
-export const IconOnly = () => (
-  <Button>
-     <Heart className="h-6 w-6" /> {/*not really working at the moment, but ignore for now*/}
-  </Button>
-);
+export const Primary = Template.bind({});
+Primary.args = {
+    label: 'Primary Button',
+    variant: 'primary',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+    label: 'Secondary Button',
+    variant: 'secondary',
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+    label: 'Tertiary Button',
+    variant: 'tertiary',
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    label: 'Disabled Button',
+    disabled: true,
+};

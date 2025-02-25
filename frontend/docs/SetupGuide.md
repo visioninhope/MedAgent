@@ -4,14 +4,14 @@ This document gives an overview on how the frontend was set up.
 
 For the beginning, an overview over the applied steps:
 
-|   | Step                                                       | What is Installed?                  | Why is it Needed?                                   | Outcome                               | Link                                                                        |
-|---|------------------------------------------------------------|-------------------------------------|-----------------------------------------------------|---------------------------------------|-----------------------------------------------------------------------------|
-| 1 | [Create Next.js Project](#1-create-nextjs-project)         | Next.js, React, TypeScript          | Core framework for modern web development           | Clean Next.js project scaffold        | [Next.js Docs](https://nextjs.org/docs)                                     |
-| 2 | [Tailwind CSS Setup](#2-tailwind-css-setup)                | Tailwind CSS                        | Utility-first CSS for responsive design             | Styled components and pages           | [Tailwind Docs](https://tailwindcss.com/docs)                               |
-| 3 | [Storybook Setup](#3-storybook-setup)                      | Storybook                           | Isolated UI development and testing                 | Component library for showcasing UI   | [Storybook Docs](https://storybook.js.org/docs/react)                       |
-| 4 | [Component Organization](#4-component-organization)        | Core, Composite, and Screens        | Organized and maintainable component structure      | Clear project hierarchy               | [Next.js Routing Docs](https://nextjs.org/docs/routing/introduction)        |
-| 5 | [Useful Packages](#5-useful-packages)                      | Headless UI, Lucide React           | UI components and modern icon set                   | Enhanced UI and icon integration      | [Headless UI](https://headlessui.com/), [Lucide React](https://lucide.dev/) |
-| 6 | [Running the Project](#6-running-and-building-the-project) | Next.js dev server and Storybook    | Development and preview environments                | Fully operational frontend workflow   | [Next.js Docs (Running)](https://nextjs.org/docs/getting-started)           |
+|   | Step                                                       | What is Installed?               | Why is it Needed?                              | Outcome                             | Link                                                                        |
+|---|------------------------------------------------------------|----------------------------------|------------------------------------------------|-------------------------------------|-----------------------------------------------------------------------------|
+| 1 | [Create Next.js Project](#1-create-nextjs-project)         | Next.js, React, TypeScript       | Core framework for modern web development      | Clean Next.js project scaffold      | [Next.js Docs](https://nextjs.org/docs)                                     |
+| 2 | [Tailwind CSS Setup](#2-tailwind-css-setup)                | Tailwind CSS                     | Utility-first CSS for responsive design        | Styled components and pages         | [Tailwind Docs](https://tailwindcss.com/docs)                               |
+| 3 | [Storybook Setup](#3-storybook-setup)                      | Storybook                        | Isolated UI development and testing            | Component library for showcasing UI | [Storybook Docs](https://storybook.js.org/docs/react)                       |
+| 4 | [Component Organization](#4-component-organization)        | Core, Composite, and Screens     | Organized and maintainable component structure | Clear project hierarchy             | [Next.js Routing Docs](https://nextjs.org/docs/routing/introduction)        |
+| 5 | [Useful Packages](#5-useful-packages)                      | Headless UI, Lucide React        | UI components and modern icon set              | Enhanced UI and icon integration    | [Headless UI](https://headlessui.com/), [Lucide React](https://lucide.dev/) |
+| 6 | [Running the Project](#6-running-and-building-the-project) | Next.js dev server and Storybook | Development and preview environments           | Fully operational frontend workflow | [Next.js Docs (Running)](https://nextjs.org/docs/getting-started)           |
 
 ---
 
@@ -56,7 +56,7 @@ const config = {
 export default config;
 ```
 
-3. Add Tailwind directives in `src/app/globals.css`:
+3. Add Tailwind directives in `src/styles/globals.css`:
 ```css
 @tailwind base;
 @tailwind components;
@@ -135,21 +135,37 @@ export function Modal({ isOpen, close }: { isOpen: boolean; close: () => void })
 }
 ```
 
----
+3. Also added the following:
+```bash
+npm install tailwindcss autoprefixer postcss
+```
+- Tailwindcss should already be installed
+- In `postcss.config.js`, there should be:
+  - ```javascript
+    module.exports = {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {}
+      },
+    };
+    ```
 
 ### 6. Running and Building the Project
 1. Run Dev Server:
 ```bash
 npm run dev
 ```
-2. Run Storybook:
+2. 
+3. Run Storybook:
 ```bash
 npm run storybook
 ```
+
 3. Build for Production:
 ```bash
 npm run build
 ```
+
 4. Preview Production Build:
 ```bash
 npm run start

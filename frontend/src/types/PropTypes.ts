@@ -1,10 +1,14 @@
+import React from "react";
+
 // Core/Button props
-export type ButtonProps = {
-  label?: string;
-  onClick?: () => void;
-  children?: React.ReactNode;
-  disabled?: boolean;
-};
+export interface ButtonProps {
+    label?: string;
+    onClick?: () => void;
+    disabled?: boolean;
+    variant?: 'primary' | 'secondary' | 'tertiary';
+    children?: React.ReactNode;
+}
+
 
 // Composite/Modal props
 export type ModalProps = {

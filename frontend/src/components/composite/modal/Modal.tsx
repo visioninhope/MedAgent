@@ -1,6 +1,6 @@
 import { Dialog } from '@headlessui/react';
-import { Button } from '@/components/core/button/Button';
-import {ModalProps} from "@/types/PropTypes";
+import Button from '@/components/core/button/Button';
+import { ModalProps } from "@/types/PropTypes";
 
 export function Modal({ isOpen, onClose, title = 'Modal Title', description = 'This is the modal description.' }: ModalProps) {
   return (

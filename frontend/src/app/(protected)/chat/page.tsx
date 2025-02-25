@@ -1,11 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
+import React, { useState, useRef } from 'react';
+
 import { List, Input, Button, Typography, Divider } from 'antd';
 import { SendOutlined } from '@ant-design/icons';
+import Draggable from 'react-draggable'; // Both at the same time
 
 const { Text } = Typography;
-
 interface Message {
   id: number;
   sender: string;
@@ -14,6 +16,12 @@ interface Message {
 }
 
 const ChatPage: React.FC = () => {
+
+  // 动态加载 Live2DWidget（仅在客户端渲染）
+  const Live2DWidget = dynamic(() => import('@/components/chat/Live2DWidget'), {
+    ssr: false,
+  });
+
   // 初始聊天记录（示例）
   const [messages, setMessages] = useState<Message[]>([
     { id: 1, sender: 'Alice', content: 'Hello there!', isMine: false },
@@ -22,6 +30,10 @@ const ChatPage: React.FC = () => {
 
   // 文本框内容
   const [inputValue, setInputValue] = useState('');
+
+
+  // 用来给 Draggable 指定 nodeRef，避免 findDOMNode
+  const dragRef = useRef<HTMLDivElement>(null);
 
   // 发送消息
   const handleSend = () => {
@@ -39,7 +51,21 @@ const ChatPage: React.FC = () => {
   };
 
   return (
+
     <div style={styles.container}>
+
+      
+      {/* 
+        Draggable + nodeRef 用法：
+        1. <Draggable nodeRef={dragRef}>
+        2. 包裹一个 <div ref={dragRef}>，里面放真正要移动的组件
+      */}
+      <Draggable nodeRef={dragRef}>
+        <div ref={dragRef} style={styles.live2dWrapper}>
+          <Live2DWidget />
+        </div>
+      </Draggable>
+
       <Divider orientation="left" style={{ fontSize: '1.25rem' }}>
         Chat with Alice
       </Divider>

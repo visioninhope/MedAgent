@@ -12,25 +12,12 @@ npm run storybook
 
 ## **Core Components**
 
-| Component | Short description                                        | Link                                                   |
-|-----------|----------------------------------------------------------|--------------------------------------------------------|
-| Button    | Standard component for any action trigger by clicking it | [Button.tsx](../src/components/core/button/Button.tsx) |
+| Component | Short description                                                                      | Link                                                   |
+|-----------|----------------------------------------------------------------------------------------|--------------------------------------------------------|
+| Button    | Standard component for any action trigger by clicking it                               | [Button.tsx](../src/components/core/button/Button.tsx) |
+| Link      | Navigation link within app                                                             | [Link.tsx](../src/components/core/link/Link.tsx)       |
+| Stack     | Layout component to stack elements (vertically / horizontally with controlled spacing) | [Stack.tsx](../src/components/core/stack/Stack.tsx)    |
 
-
-2. **Link**
-   - A component for navigation links within the app. Used in the top navigation bar and sidebar.
-   - **File:** `src/components/core/Link.tsx`
-   - **Styles:** Tailwind CSS utilities.
-
-3. **Icon**
-   - A generic icon component for scalable vector icons.
-   - **File:** `src/components/core/Icon.tsx`
-   - **Styles:** Tailwind CSS classes for sizes and colors.
-
-4. **Stack**
-   - A layout component used to stack elements vertically with controlled spacing.
-   - **File:** `src/components/core/Stack.tsx`
-   - **Styles:** Tailwind CSS utilities.
 
 ## **Composite Components**
 

@@ -1,16 +1,21 @@
 # Component Overview
 
 This document provides an overview of the components used in the project.
+- Core components are the true basic components, that are just defined "as themselves"
+- Composite components somehow wrap core components, or combine multiple
+- Screens now finally are composed of all sorts of components and are the finally displayed pages of the system. They must be inserted using routing.
+
+Detailed documentation for all components can be found in the storybook
+```bash
+npm run storybook
+```
 
 ## **Core Components**
 
-Core components are basic building blocks that are reused throughout the app:
+| Component | Short description                                        | Link                                                   |
+|-----------|----------------------------------------------------------|--------------------------------------------------------|
+| Button    | Standard component for any action trigger by clicking it | [Button.tsx](../src/components/core/button/Button.tsx) |
 
-1. **Button**
-   - A standard button component used for actions. Supports `label`, `onClick`, `disabled`, and `children` (for custom content like icons).
-   - **Features:** Primary, secondary, and disabled states, along with hover effects.
-   - **File:** `src/components/core/Button.tsx`
-   - **Styles:** Tailwind CSS and custom SASS (for dynamic color changes).
 
 2. **Link**
    - A component for navigation links within the app. Used in the top navigation bar and sidebar.

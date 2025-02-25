@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '@/app/auth/AuthContext';
+import { useAuth } from '@/auth/AuthContext';
 
 type Role = 'user' | 'developer' | 'admin';
 

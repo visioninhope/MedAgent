@@ -8,7 +8,6 @@ import { initReactI18next } from 'react-i18next';
 import AppHeader from '@/components/common/Header';
 import AppFooter from '@/components/common/Footer';
 import { getOptions, languages } from '@/i18n/settings';
-import './styles/globals.css';
 
 const i18n = i18next.createInstance();
 
@@ -70,6 +69,7 @@ export default function RootLayout({
         <title>MedAgent</title>
         <meta charSet="utf-8" />        
         <meta name="description" content="MedAgent - AI-powered medical assistant" />
+        <link rel="stylesheet" href="/styles/globals.css" />
         <link rel="icon" href="/images/logo.svg" />
       </head>
       <body>

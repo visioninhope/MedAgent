@@ -7,27 +7,57 @@ This directory contains the internationalization (i18n) resource files for the M
 ```
 src/i18n/
 ├── README.md
-├── settings.ts      # i18n configuration file
+├── settings.ts     # i18n configuration file
 ├── index.ts        # i18n initialization file
-├── en/             # English translations
-│   └── common.json # General translation file
-├── zh/             # Chinese translations
-│   └── common.json # General translation file
-└── de/             # German translations
-    └── common.json # General translation file
+├── en/             
+│   └── common.json # English translations
+├── zh/             
+│   └── common.json # Chinese translations
+└── de/             
+    └── common.json # German translations
 ```
 
-## Usage Instructions
+## Configuration
 
-1. Adding a new language:
-   - Add the new language code to the `languages` array in `settings.ts`
-   - Create a new translation folder and `common.json` under the corresponding language code
+### Language Settings (`settings.ts`)
+```typescript
+export const languages = ['en', 'zh', 'de']
+export const languageLabels = {
+  'en': 'English',
+  'zh': '中文',
+  'de': 'Deutsch'
+}
+```
 
-2. Adding a new translation key:
-   - Add the same key to `common.json` in all languages
-   - Organize translation content using nested objects
+## Adding a New Language
 
-3. Using in components:
+1. Update `settings.ts`:
+   - Add the language code to `languages` array
+   - Add the display name to `languageLabels` object
+2. Create Translation File and Folder:
+   - Create a new directory with the language code, such as `fr`
+   - Inside the directory, add `common.json` with translations
+
+Example:
+```json
+{
+    "home": {
+        "title": "Your Title",
+        "subtitle": "Your Subtitle",
+        "try_now": "Try Now"
+    },
+    "nav": {
+        "home": "Home",
+        "chat": "Chat",
+        "studio": "Studio",
+        "dashboard": "Dashboard",
+        "sign_in": "Sign In"
+    }
+}
+```
+
+## Usage in Components
+
 ```tsx
 import { useTranslation } from 'react-i18next';
 
@@ -38,32 +68,18 @@ const Component = () => {
 ```
 
 ## Supported Languages
-
 - English (en)
 - Chinese (zh)
 - German (de)
 
-## File Naming Convention
+## Language Switching
 
-- Use lowercase letters
-- Use ISO 639-1 language codes as folder names
-- Translation files use .json format
-
-## Translation File Structure
-
-Each language's translation file should follow the same structure:
-
-```json
-{
-  "section": {
-    "key": "translation"
-  }
-}
-```
+The language switcher component is available at `components/common/LanguageSwitcher.tsx` and can be used to change languages dynamically.
 
 ## Notes
 
-1. Ensure all language translation files have consistent key structures
-2. Ensure all translation keys have corresponding translation content
-3. Use semantic key names for easy maintenance
-4. Regularly check and update translation content
+1. Ensure all language files have consistent key structures
+2. All translations must be present in all language files
+3. Use semantic key names for better maintenance
+4. The system will automatically load translations for all configured languages
+5. Default language is set to 'en' (English)

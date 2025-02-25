@@ -7,7 +7,7 @@ import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import AppHeader from '@/components/common/Header';
 import AppFooter from '@/components/common/Footer';
-import { getOptions } from '@/i18n/settings';
+import { getOptions, languages } from '@/i18n/settings';
 import './styles/globals.css';
 
 const i18n = i18next.createInstance();
@@ -24,24 +24,25 @@ export default function RootLayout({
   useEffect(() => {
     const initI18n = async () => {
       try {
-        // 修改导入路径为正确的相对路径
-        const enTranslations = await import('@/i18n/en/common.json');
-        const zhTranslations = await import('@/i18n/zh/common.json');
-        const deTranslations = await import('@/i18n/de/common.json');
+        // 动态导入所有配置的语言翻译
+        const translations = await Promise.all(
+          languages.map(async (lang) => {
+            const module = await import(`@/i18n/${lang}/common.json`);
+            return { lang, translation: module.default };
+          })
+        );
+
+        // 构建 resources 对象
+        const resources = translations.reduce((acc, { lang, translation }) => ({
+          ...acc,
+          [lang]: {
+            common: translation
+          }
+        }), {});
 
         await i18n.init({
           ...getOptions(),
-          resources: {
-            en: {
-              common: enTranslations.default
-            },
-            zh: {
-              common: zhTranslations.default
-            },
-            de: {
-              common: deTranslations.default
-            }
-          }
+          resources
         });
 
         setInitialized(true);

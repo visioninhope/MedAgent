@@ -3,7 +3,7 @@
 import React from 'react';
 import { Select } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { languages } from '@/i18n/settings';
+import { languages, languageLabels } from '@/i18n/settings';
 
 const { Option } = Select;
 
@@ -24,7 +24,7 @@ const LanguageSwitcher: React.FC = () => {
         >
             {languages.map((lang) => (
                 <Option key={lang} value={lang}>
-                    {lang.toUpperCase()}
+                    {languageLabels[lang]}
                 </Option>
             ))}
         </Select>

@@ -5,11 +5,14 @@ import React from 'react';
 import { Typography, Row, Col, Divider, Button } from 'antd';
 import { RocketOutlined, SearchOutlined, ExperimentOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 import ExpandableCard from '@/components/common/ExpandableCard';
 
 const { Title, Paragraph } = Typography;
 
 const HomePage: React.FC = () => {
+  const { t } = useTranslation();
+
   // 示例长文本，可以根据实际数据调整
   const longText1 = '利用 RAG 框架，实现文献、指南的精准检索，为问答提供有力的知识支持。' +
     ' 这部分内容可能会比较长，如果超出一定高度则会自动折叠，点击详情可展开查看更多详细信息。';
@@ -32,12 +35,12 @@ const HomePage: React.FC = () => {
           borderRadius: 8,
         }}
       >
-        <Title>基于 RAG Pipeline 的医疗问答系统</Title>
+        <Title>{t('home.title')}</Title>
         <Paragraph style={{ fontSize: '1.1rem' }}>
-          利用大语言模型与 AI 工作流，结合实时文献检索，为您提供最专业、最新的医疗指南和问答服务。
+          {t('home.subtitle')}
         </Paragraph>
         <Button type="primary" size="large">
-          <Link href="/chat">立即体验</Link>
+          <Link href="/chat">{t('home.try_now')}</Link>
         </Button>
       </div>
 

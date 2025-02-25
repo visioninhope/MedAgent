@@ -2,10 +2,12 @@
 'use client';
 
 import React from 'react';
-import { Layout, Button } from 'antd';
+import { Layout, Button, Space } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 import AppNav from '@/components/common/Nav';
+import LanguageSwitcher from '@/components/common/LanguageSwitcher';
 
 const { Header } = Layout;
 
@@ -16,6 +18,8 @@ const menuItems = [
 ];
 
 const AppHeader: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Header
       style={{
@@ -27,21 +31,24 @@ const AppHeader: React.FC = () => {
       }}
     >
       {/* 左侧 Logo */}
-    <div style={{ flex: 'none', color: '#fff', fontSize: '1.2rem', fontWeight: 'bold' }}>
-    MyLogo
-    </div>
+      <div style={{ flex: 'none', color: '#fff', fontSize: '1.2rem', fontWeight: 'bold' }}>
+        MedAgent
+      </div>
 
       {/* 中间导航 */}  
       <div style={{ flex: 1, overflow: 'hidden', display: 'flex', justifyContent: 'center' }}>
-      <AppNav />
+        <AppNav />
       </div>
 
-      {/* 右侧 Sign In */}
-      <Link href="/sign-in">
-        <Button type="primary" shape="round"  icon={<UserOutlined/>}>
-          Sign In
-        </Button>
-      </Link>
+      {/* 右侧语言切换器和登录按钮 */}
+      <Space>
+        <LanguageSwitcher />
+        <Link href="/sign-in">
+          <Button type="primary" shape="round" icon={<UserOutlined />}>
+            {t('nav.sign_in')}
+          </Button>
+        </Link>
+      </Space>
     </Header>
   );
 };

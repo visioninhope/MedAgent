@@ -29,7 +29,7 @@
 
 
 This is official repo for "MedAgent: **Med**ical Guidelines Recommendation System Based on Retrieval Augmented Retrieval and **Agent**ic AI Workflows" by DBIS at RWTH Aachen University
-([Yongli Mou*](mou@dbis.rwth-aachen.de), Meret Unbehaun, Saif Nasir and Stefan Decker) and University Hospital Aachen (Nadine Önelmis and Behrus Puladi)
+([Yongli Mou*](mou@dbis.rwth-aachen.de), Hanbin Chen, Meret Unbehaun, Saif Nasir and Stefan Decker) and University Hospital Aachen (Nadine Önelmis and Behrus Puladi)
 
 ## Overview
 

@@ -29,7 +29,7 @@
 
 
 This is official repo for "MedAgent: **Med**ical Guidelines Recommendation System Based on Retrieval Augmented Retrieval and **Agent**ic AI Workflows" by DBIS at RWTH Aachen University
-([Yongli Mou*](mou@dbis.rwth-aachen.de), Meret Unbehaun, Saif Nasir and Stefan Decker) and University Hospital Aachen (Nadine Önelmis and Behrus Puladi)
+([Yongli Mou*](mou@dbis.rwth-aachen.de), Hanbin Chen, Meret Unbehaun, Saif Nasir and Stefan Decker) and University Hospital Aachen (Nadine Önelmis and Behrus Puladi)
 
 ## Overview
 
@@ -46,7 +46,7 @@ The Medical Guidelines Recommendation System (MedAgent) is an advanced AI-powere
 Role-based Interactions: The system is designed to serve two primary user roles:
 
 - **Doctors (End-users)**: They interact with the system to receive medical recommendations, guidelines, and insights based on patient data and clinical queries.
-- **Knowledge Maintainers (Developers)**: These users are responsible for keeping the system’s knowledge base up to date, ensuring that medical guidelines and AI models are regularly improved and trained to handle emerging medical trends and innovations.
+- **Knowledge Maintainers (Developers)**: These users are responsible for keeping the system's knowledge base up to date, ensuring that medical guidelines and AI models are regularly improved and trained to handle emerging medical trends and innovations.
 
 
 ## Components
@@ -73,7 +73,7 @@ Role-based Interactions: The system is designed to serve two primary user roles:
 
 ## Usage
 
-Here’s an example of how to use the model:
+Here's an example of how to use the model:
 
 ```python
 from api.llms.azure import AzureChatCompletion
@@ -109,6 +109,14 @@ More detailed tutorials can be found in our [documentation](https://your-project
 More benchmarks are available in the [research paper](https://your-project-website.com/paper).
 
 
+## Internationalization (i18n)
+
+MedAgent supports English, Chinese, and German languages, implemented using `react-i18next` and `i18next` with dynamic language switching, JSON translation texts, and modularized file structure. To add a new language, update `settings.ts`, create a new language folder, add a translation file, and update the language switcher component.
+
+
+More information in the [i18n README](frontend/src/i18n/README.md)
+
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
@@ -119,7 +127,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you use this project in your research, please cite:
 ```bibtex
 @article{mou2025MedAgent,
-  author  = {Yongli Mou, Meret Unbehaun, Saif Nasir, Nadine Önelmis, Behrus Puladi and Stefan Decker},
+  author  = {Yongli Mou, Hanbin Chen, Meret Unbehaun, Saif Nasir, Nadine Önelmis, Behrus Puladi and Stefan Decker},
   title   = {MedAgent:  Medical Guidelines Recommendation System Based on Retrieval Augmented Retrieval and Agentic AI Workflows},
   journal = {XXX},
   year    = {202X}

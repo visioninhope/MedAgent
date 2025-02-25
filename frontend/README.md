@@ -59,10 +59,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 │       ├── AgentManagement.tsx
 │       └── KnowledgeBaseManagement.tsx
 └── i18n
-    ├── config.ts
-    ├── en
-    │   └── translation.json
-    ├── locales
-    └── zh
-        └── translation.json
+    ├── README.md
+    ├── settings.ts     # i18n configuration file
+    ├── index.ts        # i18n initialization file
+    ├── en/             
+    │   └── common.json # English translations
+    ├── zh/             
+    │   └── common.json # Chinese translations
+    └── de/             
+        └── common.json # German translations
 ```

@@ -91,6 +91,12 @@ export default { title: 'Core/Button', component: Button };
 export const Default = () => <Button label="Click Me" />;
 ```
 
+2. To allow documentation for the components, add the addon docs
+```bash
+npm install @storybook/addon.docs
+```
+- Need to ensure its enabled in the `.storybook/main.ts`, and need to add documentation to the respective story files
+
 ### 4. Component Organization
 Organize components into folders:
 ```

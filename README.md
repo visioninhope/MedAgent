@@ -127,7 +127,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you use this project in your research, please cite:
 ```bibtex
 @article{mou2025MedAgent,
-  author  = {Yongli Mou, Meret Unbehaun, Saif Nasir, Nadine Önelmis, Behrus Puladi and Stefan Decker},
+  author  = {Yongli Mou, Hanbin Chen, Meret Unbehaun, Saif Nasir, Nadine Önelmis, Behrus Puladi and Stefan Decker},
   title   = {MedAgent:  Medical Guidelines Recommendation System Based on Retrieval Augmented Retrieval and Agentic AI Workflows},
   journal = {XXX},
   year    = {202X}

@@ -7,7 +7,7 @@ const { Footer } = Layout;
 const AppFooter: React.FC = () => {
   return (
     <Footer style={{ textAlign: 'center' }}>
-      MedAgent ©2025 Created by RWTH (DBIS) and UKA (IMI)
+      MedAgent ©2025 Created by RWTH (DBIS)
     </Footer>
   );
 };

@@ -38,4 +38,5 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   );
 };
 
-export default withRole(DashboardLayout, ['admin']);
+// export default withRole(DashboardLayout, ['admin']);
+export default DashboardLayout;

@@ -4,7 +4,7 @@ import React from 'react';
 import { Tabs, Tab } from '@mui/material';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import { Home, Chat, Edit, Dashboard } from '@mui/icons-material';
+import { Home, Chat, Edit, Dashboard, MenuBook } from '@mui/icons-material';
 import { usePathname, useRouter } from 'next/navigation';
 
 const AppNav: React.FC = () => {
@@ -15,6 +15,8 @@ const AppNav: React.FC = () => {
   let selectedKey = 'home';
   if (pathname.startsWith('/chat')) {
     selectedKey = 'chat';
+  } else if (pathname.startsWith('/knowledge')) {
+    selectedKey = 'knowledge';
   } else if (pathname.startsWith('/studio')) {
     selectedKey = 'studio';
   } else if (pathname.startsWith('/dashboard')) {
@@ -24,6 +26,7 @@ const AppNav: React.FC = () => {
   const menuItems = [
     { key: 'home', icon: <Home />, label: t('nav.home'), path: '/' },
     { key: 'chat', icon: <Chat />, label: t('nav.chat'), path: '/chat' },
+    { key: 'knowledge', icon: <MenuBook />, label: t('nav.knowledge'), path: '/knowledge' },
     { key: 'studio', icon: <Edit />, label: t('nav.studio'), path: '/studio' },
     { key: 'dashboard', icon: <Dashboard />, label: t('nav.dashboard'), path: '/dashboard' },
   ];

@@ -3,7 +3,8 @@
 ├── 📁 backend       
 │   ├── 📁 src      
 │   ├── pyproject.toml
-│   └── app.py          
+│   ├── app.py
+│   └── README.md            
 ├── ...   
 └── README.md             
 ```
@@ -12,8 +13,8 @@
 
 Create conda environment and install dependencies
 ```
-conda create --name deepsc python=3.10
+conda create --name medagent python=3.10
 conda activate medagent
 pip install -e .
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
 ```

@@ -66,6 +66,55 @@ Role-based Interactions: The system is designed to serve two primary user roles:
 
 ## Installation
 
+### 前置要求
+
+- Python 3.10 或更高版本
+- Node.js 18 或更高版本
+- Conda 包管理器
+- npm 包管理器
+
+### 后端部署
+
+1. 创建并激活 Conda 环境
+```bash
+# 创建环境
+conda create --name medagent python=3.10
+
+# 激活环境
+conda activate medagent
+
+# 进入后端目录
+cd backend
+
+# 安装依赖
+pip install -e .
+```
+
+2. 启动后端服务
+```bash
+# 开发模式启动（支持热重载）
+python -m uvicorn app.main:app --reload
+```
+
+服务将在 http://127.0.0.1:8000 上运行。
+
+### 前端部署
+
+1. 安装依赖
+```bash
+# 进入前端目录
+cd frontend
+
+# 安装依赖
+npm install
+```
+
+2. 启动开发服务器
+```bash
+npm run dev
+```
+
+前端将在 http://localhost:3000 上运行。
 
 ### Docker-compose
 
@@ -136,3 +185,25 @@ If you use this project in your research, please cite:
 
 ---
 <!-- ---Developed by **Your Name** | [LinkedIn](https://linkedin.com/in/YOURNAME) | [Twitter](https://twitter.com/YOURHANDLE) -->
+
+### 快速启动
+
+我们提供了一个便捷的脚本来同时启动前端和后端服务：
+
+```bash
+# 添加执行权限
+chmod +x start.sh
+
+# 运行脚本
+./start.sh
+```
+
+该脚本会自动：
+- 检查必要的依赖是否安装
+- 创建并激活 conda 环境（如果不存在）
+- 安装所需的依赖
+- 启动后端服务（http://127.0.0.1:8000）
+- 启动前端服务（http://localhost:3000）
+
+你可以使用 `Ctrl+C` 来同时停止所有服务。
+

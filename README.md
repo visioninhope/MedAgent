@@ -66,55 +66,80 @@ Role-based Interactions: The system is designed to serve two primary user roles:
 
 ## Installation
 
-### 前置要求
+### Prerequisites
 
-- Python 3.10 或更高版本
-- Node.js 18 或更高版本
-- Conda 包管理器
-- npm 包管理器
+- Python 3.10 or higher
+- Node.js 18 or higher
+- Conda package manager
+- npm package manager
 
-### 后端部署
+### Quick Start
 
-1. 创建并激活 Conda 环境
+We provide a convenient script to start both frontend and backend services simultaneously:
+
 ```bash
-# 创建环境
+# Add execution permission
+chmod +x start.sh
+
+# Run the script
+./start.sh
+```
+
+The script will automatically:
+- Check for required dependencies
+- Create and activate conda environment (if not exists)
+- Install required dependencies
+- Start backend service (http://127.0.0.1:8000)
+- Start frontend service (http://localhost:3000)
+
+You can use `Ctrl+C` to stop all services at once.
+
+### Manual Deployment
+
+If you prefer to control the deployment process manually, follow these steps:
+
+#### Backend Setup
+
+1. Create and activate Conda environment
+```bash
+# Create environment
 conda create --name medagent python=3.10
 
-# 激活环境
+# Activate environment
 conda activate medagent
 
-# 进入后端目录
+# Navigate to backend directory
 cd backend
 
-# 安装依赖
+# Install dependencies
 pip install -e .
 ```
 
-2. 启动后端服务
+2. Start backend service
 ```bash
-# 开发模式启动（支持热重载）
+# Start in development mode (with hot reload)
 python -m uvicorn app.main:app --reload
 ```
 
-服务将在 http://127.0.0.1:8000 上运行。
+The service will run at http://127.0.0.1:8000
 
-### 前端部署
+#### Frontend Setup
 
-1. 安装依赖
+1. Install dependencies
 ```bash
-# 进入前端目录
+# Navigate to frontend directory
 cd frontend
 
-# 安装依赖
+# Install dependencies
 npm install
 ```
 
-2. 启动开发服务器
+2. Start development server
 ```bash
 npm run dev
 ```
 
-前端将在 http://localhost:3000 上运行。
+The frontend will run at http://localhost:3000
 
 ### Docker-compose
 
@@ -186,24 +211,23 @@ If you use this project in your research, please cite:
 ---
 <!-- ---Developed by **Your Name** | [LinkedIn](https://linkedin.com/in/YOURNAME) | [Twitter](https://twitter.com/YOURHANDLE) -->
 
-### 快速启动
+### Quick Start
 
-我们提供了一个便捷的脚本来同时启动前端和后端服务：
+We provide a convenient script to start both the frontend and backend services simultaneously:
 
 ```bash
-# 添加执行权限
+# Add execution permission
 chmod +x start.sh
 
-# 运行脚本
+# Run the script
 ./start.sh
 ```
 
-该脚本会自动：
-- 检查必要的依赖是否安装
-- 创建并激活 conda 环境（如果不存在）
-- 安装所需的依赖
-- 启动后端服务（http://127.0.0.1:8000）
-- 启动前端服务（http://localhost:3000）
+This script will automatically:
+- Check if the necessary dependencies are installed
+- Create and activate the conda environment (if it doesn't exist)
+- Install the required dependencies
+- Start the backend service (http://127.0.0.1:8000)
+- Start the frontend service (http://localhost:3000)
 
-你可以使用 `Ctrl+C` 来同时停止所有服务。
-
+You can use `Ctrl+C` to stop all services simultaneously.

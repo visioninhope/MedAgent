@@ -1,39 +1,39 @@
 #!/bin/bash
 
-# 检查是否安装了必要的工具
-command -v conda >/dev/null 2>&1 || { echo "需要安装 conda 但未找到，请先安装 conda"; exit 1; }
-command -v npm >/dev/null 2>&1 || { echo "需要安装 npm 但未找到，请先安装 Node.js 和 npm"; exit 1; }
+# Check if required tools are installed
+command -v conda >/dev/null 2>&1 || { echo "Conda is required but not found. Please install conda first"; exit 1; }
+command -v npm >/dev/null 2>&1 || { echo "npm is required but not found. Please install Node.js and npm first"; exit 1; }
 
-# 激活 conda 环境
-echo "正在激活 conda 环境..."
+# Activate conda environment
+echo "Activating conda environment..."
 source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate medagent || {
-    echo "conda 环境 'medagent' 不存在，正在创建..."
+    echo "Conda environment 'medagent' not found, creating..."
     conda create --name medagent python=3.10 -y
     conda activate medagent
 }
 
-# 启动后端服务
-echo "正在启动后端服务..."
+# Start backend service
+echo "Starting backend service..."
 cd backend
 pip install -e . >/dev/null 2>&1
 python -m uvicorn app.main:app --reload &
 BACKEND_PID=$!
 
-# 启动前端服务
-echo "正在启动前端服务..."
+# Start frontend service
+echo "Starting frontend service..."
 cd ../frontend
 npm install >/dev/null 2>&1
 npm run dev &
 FRONTEND_PID=$!
 
-echo "服务已启动:"
-echo "后端运行在 http://127.0.0.1:8000"
-echo "前端运行在 http://localhost:3000"
-echo "按 Ctrl+C 停止所有服务"
+echo "Services started successfully:"
+echo "Backend running at http://127.0.0.1:8000"
+echo "Frontend running at http://localhost:3000"
+echo "Press Ctrl+C to stop all services"
 
-# 等待用户中断
+# Wait for user interrupt
 wait
 
-# 清理进程
+# Cleanup processes
 kill $BACKEND_PID $FRONTEND_PID 2>/dev/null 

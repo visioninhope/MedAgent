@@ -36,4 +36,4 @@ echo "Press Ctrl+C to stop all services"
 wait
 
 # Cleanup processes
-kill $BACKEND_PID $FRONTEND_PID 2>/dev/null 
+kill $BACKEND_PID $FRONTEND_PID 2>/dev/null

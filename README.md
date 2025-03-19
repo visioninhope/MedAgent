@@ -66,6 +66,80 @@ Role-based Interactions: The system is designed to serve two primary user roles:
 
 ## Installation
 
+### Prerequisites
+
+- Python 3.10 or higher
+- Node.js 18 or higher
+- Conda package manager
+- npm package manager
+
+### Quick Start
+
+We provide a convenient script to start both frontend and backend services simultaneously:
+
+```bash
+# Add execution permission
+chmod +x start.sh
+
+# Run the script
+./start.sh
+```
+
+The script will automatically:
+- Check for required dependencies
+- Create and activate conda environment (if not exists)
+- Install required dependencies
+- Start backend service (http://127.0.0.1:8000)
+- Start frontend service (http://localhost:3000)
+
+You can use `Ctrl+C` to stop all services at once.
+
+### Manual Deployment
+
+If you prefer to control the deployment process manually, follow these steps:
+
+#### Backend Setup
+
+1. Create and activate Conda environment
+```bash
+# Create environment
+conda create --name medagent python=3.10
+
+# Activate environment
+conda activate medagent
+
+# Navigate to backend directory
+cd backend
+
+# Install dependencies
+pip install -e .
+```
+
+2. Start backend service
+```bash
+# Start in development mode (with hot reload)
+python -m uvicorn app.main:app --reload
+```
+
+The service will run at http://127.0.0.1:8000
+
+#### Frontend Setup
+
+1. Install dependencies
+```bash
+# Navigate to frontend directory
+cd frontend
+
+# Install dependencies
+npm install
+```
+
+2. Start development server
+```bash
+npm run dev
+```
+
+The frontend will run at http://localhost:3000
 
 ### Docker-compose
 
@@ -136,3 +210,24 @@ If you use this project in your research, please cite:
 
 ---
 <!-- ---Developed by **Your Name** | [LinkedIn](https://linkedin.com/in/YOURNAME) | [Twitter](https://twitter.com/YOURHANDLE) -->
+
+### Quick Start
+
+We provide a convenient script to start both the frontend and backend services simultaneously:
+
+```bash
+# Add execution permission
+chmod +x start.sh
+
+# Run the script
+./start.sh
+```
+
+This script will automatically:
+- Check if the necessary dependencies are installed
+- Create and activate the conda environment (if it doesn't exist)
+- Install the required dependencies
+- Start the backend service (http://127.0.0.1:8000)
+- Start the frontend service (http://localhost:3000)
+
+You can use `Ctrl+C` to stop all services simultaneously.
